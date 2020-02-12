@@ -15,9 +15,7 @@ def int_parse(int_config):
   int_parse['interface'] = int_config.pop(0).split()[1]
 #  print 'Intconfig after pop: ' + str(int_config)
   for line in int_config:
-    print 'Line: ' + line
     for pattern in patterns:
-      print 'Pattern: ' + pattern
       if re.match(pattern,line):
         raw_parse.append(re.match(pattern,line).groups())
   return raw_parse
